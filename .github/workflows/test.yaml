@@ -1,0 +1,25 @@
+name: Test de Funcionamiento de la Aplicación
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test de Funcionamiento
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v2
+      
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+      
+    - name: Instalar dependencias
+      run: pip install -r requirements.txt
+      
+    - name: Ejecutar pruebas
+      run: pytest tests_flask_app.py
