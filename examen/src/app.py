@@ -16,7 +16,7 @@ def homepage():
     Render the homepage with current time and a random theme.
     """
     the_time = datetime.now().strftime("%A, %d %b %Y %H:%M")
-    return render_template("index.html", the_time=the_time, tema="dogs")
+    return render_template("index.html", the_time=the_time, tema="cats")
 
 @app.route('/status')
 def status():
